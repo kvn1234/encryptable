@@ -40,7 +40,7 @@ trait Encryptable
      */
     protected function decryptAttribute($value)
     {
-        $value = decrypt($value);
+        if ($value): $value = decrypt($value); endif;
 
         return $value;
     }
@@ -55,7 +55,7 @@ trait Encryptable
      */
     protected function encryptAttribute($value)
     {
-        $value = encrypt($value);
+        if ($value): $value = encrypt($value); endif;
 
         return $value;
     }
